@@ -134,7 +134,7 @@ footer {
     flex: 1 1 calc(50% - 18px);
   }
 }
-/* Bei mittelgroßen Screens: 2 Cards pro Reihe <--TO DO*-->/
+/* Bei mittelgroßen Screens: 2 Cards pro Reihe <---TO DO*--->/
 @media (max-width: 1045px) {
   .profiles-main article {
     flex: 1 1 calc(50% - 18px);
