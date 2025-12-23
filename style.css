@@ -35,10 +35,8 @@ header h1 {
   position: relative;
 }
 
-.card h2 a::after {
-  content: "";
-  position: absolute;
-  inset: 0;
+.card a {
+  text-decoration: none;
 }
 
 /* ---------- Main Layout: 4 Artikel horizontal ---------- */
