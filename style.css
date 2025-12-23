@@ -93,6 +93,14 @@ header h1 {
   margin-top: 10px;
 }
 
+h2 > a {
+  color: #2a1c10;
+}
+
+h2 > a:hover {
+  color: red;
+}
+
 .profile-description-text {
   font-size: 0.95rem;
   color: #3b2717;
