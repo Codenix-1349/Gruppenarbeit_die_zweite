@@ -142,28 +142,44 @@ body {
     box-shadow: var(--shadow-image);
 }
 
-/* Description Container: Styled box with background, padding, and curved edges */
+/* Description Container: Distinct panel with background, generous padding, curved edges, and subtle depth */
+/* This panel visually balances with the profile image and creates a premium card-like appearance */
 .profile-header__description {
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 0;
     min-width: 280px;
+    /* Flexbox for internal vertical centering of text content */
     display: flex;
-    align-items: center;
-    background-color: var(--color-bg-card);
-    padding-top: var(--spacing-md);
-    padding-bottom: var(--spacing-md);
-    padding-left: var(--spacing-md);
-    padding-right: var(--spacing-md);
+    flex-direction: column;
+    justify-content: center;
+    align-self: stretch;
+    /* Panel background with subtle accent tint for visual distinction */
+    background-color: rgba(79, 140, 255, 0.08);
+    /* Generous padding for breathing room inside the panel */
+    padding-top: var(--spacing-lg);
+    padding-right: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+    padding-left: var(--spacing-lg);
+    /* Curved edges matching premium design aesthetic */
     border-top-left-radius: var(--radius-large);
     border-top-right-radius: var(--radius-large);
     border-bottom-left-radius: var(--radius-large);
     border-bottom-right-radius: var(--radius-large);
-    box-shadow: var(--shadow-tool);
+    /* Subtle border for panel definition */
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(79, 140, 255, 0.15);
+    /* Elevation shadow for depth */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Description paragraph styling */
+/* Description paragraph styling with comfortable reading experience */
 .profile-header__description p {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
     font-size: 1.1rem;
     line-height: 1.8;
     color: var(--color-text-secondary);
@@ -368,14 +384,21 @@ body {
         width: 160px;
     }
 
-    /* Center the description container on mobile with adjusted padding */
+    /* Center the description panel on mobile with adjusted padding and maintained panel aesthetics */
     .profile-header__description {
         min-width: 100%;
+        align-self: stretch;
         text-align: center;
-        padding-top: var(--spacing-sm);
-        padding-bottom: var(--spacing-sm);
-        padding-left: var(--spacing-sm);
+        /* Slightly reduced padding for mobile screens */
+        padding-top: var(--spacing-md);
         padding-right: var(--spacing-sm);
+        padding-bottom: var(--spacing-md);
+        padding-left: var(--spacing-sm);
+        /* Maintain curved edges on mobile */
+        border-top-left-radius: var(--radius-medium);
+        border-top-right-radius: var(--radius-medium);
+        border-bottom-left-radius: var(--radius-medium);
+        border-bottom-right-radius: var(--radius-medium);
     }
 
     /* Single column layout for project cards on mobile */
