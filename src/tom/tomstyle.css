@@ -1,0 +1,89 @@
+/* ---------- Personalseite Tom Layout ---------- */
+.profile-tom {
+  display: flexbox;
+  flex-direction: column;
+  padding: 22px 22px;
+  /* max-width: 1200px; */
+  margin: 0 auto;
+}
+
+.profile-tom article {
+  display: flex;
+  gap: 18px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 3px solid #3a2616;
+  background: #f5e8cb;
+  padding: 14px 22px;
+  border-radius: 8px;
+
+  /* "Poster"-Look */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  position: relative;
+
+  /* Background Image */
+  background-image: url("./bilder/alcatraz.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  background-size: 100% auto;
+  background-blend-mode: soft-light;
+}
+
+/* Überschrift in der Card */
+.profile-tom article h2 {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 10px 0 8px 0;
+  color: #2a1c10;
+}
+
+/* Bild */
+.profile-tom-image {
+  width: 400px;
+  height: auto;
+  object-fit: cover;
+
+  border: 2px solid #3a2616;
+  border-radius: 6px;
+  background: #d8c29a;
+}
+
+/* Beschreibung */
+.profile-tom-description {
+  margin-top: 10px;
+  flex: 1;
+}
+
+h1 > a {
+  color: #2a1c10;
+  text-decoration: none;
+}
+
+h1 > a:hover {
+  color: red;
+}
+
+.profile-tom-description-text {
+  font-size: 0.95rem;
+  color: #3b2717;
+}
+
+/* Optionaler "WANTED" Stempel oben rechts */
+.profile-tom article::before {
+  content: "WANTED";
+  position: absolute;
+  top: -6px;
+  right: -7px;
+  padding: 6px 10px;
+
+  border: 2px solid #7a1d1d;
+  color: #7a1d1d;
+  background: rgba(245, 232, 203, 1);
+
+  font-weight: 700;
+  letter-spacing: 1px;
+  transform: rotate(8deg);
+  border-radius: 6px;
+}

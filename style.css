@@ -31,6 +31,14 @@ header h1 {
   color: #2a1c10;
 }
 
+.card {
+  position: relative;
+}
+
+.card a {
+  text-decoration: none;
+}
+
 /* ---------- Main Layout: 4 Artikel horizontal ---------- */
 .profiles-main {
   display: flex;
@@ -83,6 +91,14 @@ header h1 {
 /* Beschreibung */
 .profile-description {
   margin-top: 10px;
+}
+
+h2 > a {
+  color: #2a1c10;
+}
+
+h2 > a:hover {
+  color: red;
 }
 
 .profile-description-text {
