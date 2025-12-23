@@ -1,0 +1,249 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Georgia", "Times New Roman", serif;
+  line-height: 1.5;
+  color: #2a1c10;
+  background: #efe2c7;
+}
+
+/* ---------- Header ---------- */
+header {
+  padding: 24px 16px;
+  text-align: center;
+  border-bottom: 4px solid #3a2616;
+  background: #e6d1a3;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #2a1c10;
+}
+
+/* ---------- Main Layout: 1 Artikel zentriert ---------- */
+.profiles-main {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 22px 16px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Wanted Card (einzelne große Card) */
+.profiles-main article {
+  width: 100%;
+  max-width: 900px;
+
+  border: 3px solid #3a2616;
+  background: #f5e8cb;
+  padding: 16px;
+  border-radius: 8px;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  position: relative;
+
+  /* Layout Bild links / Text rechts */
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+/* ---------- Bild-Wrapper + WANTED Stempel am Bild ---------- */
+.image-wrap {
+  flex: 0 0 320px;
+  width: 320px;
+  max-width: 40%;
+  position: relative; /* Anker für den Stempel */
+}
+
+/* Der Stempel sitzt jetzt AM BILD */
+.image-wrap::before {
+  content: "WANTED";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 6px 10px;
+
+  border: 2px solid #7a1d1d;
+  color: #7a1d1d;
+  background: rgba(245, 232, 203, 0.8);
+
+  font-weight: 700;
+  letter-spacing: 1px;
+  transform: rotate(8deg);
+  border-radius: 6px;
+  z-index: 2;
+}
+
+/* Bild: links, einheitliche Poster-Höhe, kein Abschneiden */
+.profile-image {
+  width: 100%;
+  height: 360px;
+  object-fit: contain;
+  object-position: center;
+
+  border: 2px solid #3a2616;
+  border-radius: 6px;
+  background: #d8c29a;
+  display: block;
+}
+
+/* Beschreibung / rechter Bereich */
+.profile-description {
+  flex: 1;
+  min-width: 0;
+  padding-left: 6px;
+}
+
+/* Überschrift */
+.profiles-main article h2 {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 10px 0;
+  color: #2a1c10;
+}
+
+/* Standard Text */
+.profile-description-text {
+  font-size: 0.95rem;
+  color: #3b2717;
+  margin-bottom: 14px;
+}
+
+/* ---------- Personal Data Section ---------- */
+.personal-data {
+  margin-top: 10px;
+  padding-top: 12px;
+  border-top: 2px dashed #3a2616;
+}
+
+/* Abschnitts-Überschriften */
+.personal-data h3 {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #2a1c10;
+
+  margin-top: 18px;
+  margin-bottom: 10px;
+}
+
+.personal-data h3:first-of-type {
+  margin-top: 0;
+}
+
+/* ---------- Listen: Bullets sauber im Textblock ---------- */
+.profile-list {
+  list-style: none;
+  margin: 0 0 14px 0;
+  padding: 0;
+}
+
+.profile-list li {
+  position: relative;
+  padding-left: 18px;
+  margin: 6px 0;
+  font-size: 0.95rem;
+  color: #3b2717;
+}
+
+.profile-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: 1.5;
+  color: #2a1c10;
+}
+
+/* ---------- Actions / Link ---------- */
+.form-actions {
+  margin-top: 10px;
+}
+
+.back-link {
+  display: inline-block;
+  padding: 10px 12px;
+
+  border: 2px solid #3a2616;
+  border-radius: 8px;
+
+  text-decoration: none;
+  color: #2a1c10;
+  background: rgba(245, 232, 203, 1);
+
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.back-link:hover {
+  filter: brightness(0.97);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  margin-top: 10px;
+  padding: 16px;
+  border-top: 4px solid #3a2616;
+  background: #e6d1a3;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.footertext_left,
+.footertext_right {
+  font-size: 0.95rem;
+  color: #2a1c10;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 700px) {
+  header h1 {
+    font-size: 1.7rem;
+  }
+
+  .profiles-main article {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .image-wrap {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 auto;
+  }
+
+  .profile-image {
+    height: 280px;
+  }
+
+  .profiles-main article h2 {
+    font-size: 1.35rem;
+    margin-top: 8px;
+  }
+
+  .profile-description {
+    padding-left: 0;
+  }
+
+  .back-link {
+    width: 100%;
+    text-align: center;
+  }
+}
