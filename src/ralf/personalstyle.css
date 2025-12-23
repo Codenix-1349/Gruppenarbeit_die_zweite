@@ -1,0 +1,186 @@
+body {
+  line-height: 0px;
+}
+
+.backlink {
+  color: #2a1c10;
+  text-decoration: none;
+}
+
+.nametitel {
+  margin: 40px 20px 40px 30px;
+}
+
+main {
+  margin: 20px;
+  width: fit-content;
+  display: flex;
+}
+
+.main_puzzle {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.main_items {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.main_item {
+}
+.main_puzzle_item {
+  position: relative;
+}
+
+.main_puzzle_cover {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 20;
+}
+
+.main_puzzle_cover_link {
+  text-decoration: none;
+  height: fit-content;
+}
+
+.main_puzzle_uncovered {
+  position: relative;
+  top: 0px;
+  left: 0px;
+
+  z-index: 1;
+}
+
+.main_puzzle_cover_1_1_link:hover {
+  opacity: 50%;
+  .main_item_1_1.visibility:visited {
+    visibility: visible;
+  }
+}
+
+.main_puzzle_cover_1_2_link:hover {
+  opacity: 25%;
+}
+
+.main_puzzle_cover_1_3_link:hover {
+  opacity: 25%;
+}
+
+.main_puzzle_cover_2_1_link:hover {
+  opacity: 25%;
+}
+
+.main_puzzle_cover_2_2_link:hover {
+  opacity: 25%;
+}
+
+.main_puzzle_cover_2_3_link:hover {
+  opacity: 25%;
+}
+
+.main_puzzle_cover_3_1_link:hover {
+  opacity: 25%;
+}
+
+.main_puzzle_cover_3_2_link:hover {
+  opacity: 25%;
+}
+
+.main_puzzle_cover_3_3_link:hover {
+  opacity: 25%;
+}
+
+.main_puzzle_cover_1_1_link:visited {
+  visibility: hidden;
+}
+
+.main_puzzle_cover_1_2_link:visited {
+  visibility: hidden;
+}
+
+.main_puzzle_cover_1_3_link:visited {
+  visibility: hidden;
+}
+
+.main_puzzle_cover_2_1_link:visited {
+  visibility: hidden;
+}
+
+.main_puzzle_cover_2_2_link:visited {
+  visibility: hidden;
+}
+
+.main_puzzle_cover_2_3_link:visited {
+  visibility: hidden;
+}
+
+.main_puzzle_cover_3_1_link:visited {
+  visibility: hidden;
+}
+
+.main_puzzle_cover_3_2_link:visited {
+  visibility: hidden;
+}
+
+.main_puzzle_cover_3_3_link:hover {
+  visibility: hidden;
+}
+
+.main_puzzle_item {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  display: block;
+  position: absolute top;
+  z-index: 20;
+}
+.main_puzzle_uncovered {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  display: block;
+  top: 0px;
+  position: absolute top;
+  z-index: -1;
+}
+
+.main_puzzle_link {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+
+.main_item_1_1 {
+  visibility: visible;
+}
+.main_item_1_2 {
+  visibility: hidden;
+}
+.main_item_1_3 {
+  visibility: hidden;
+}
+.main_item_2_1 {
+  visibility: hidden;
+}
+.main_item_2_2 {
+  visibility: hidden;
+}
+.main_item_2_3 {
+  visibility: hidden;
+}
+.main_item_3_1 {
+  visibility: hidden;
+}
+.main_item_3_2 {
+  visibility: hidden;
+}
+.main_item_3_3 {
+  visibility: hidden;
+}
