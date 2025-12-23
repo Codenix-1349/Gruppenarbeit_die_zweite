@@ -9,9 +9,11 @@
  * 5. Profile Header Section
  * 6. Projects Section
  * 7. Project Cards
- * 8. Tools/Icons Section
- * 9. Media Queries - Tablet
- * 10. Media Queries - Mobile
+ * 8. Project Card Label
+ * 9. Project Card Description (Bullet Points)
+ * 10. Tools/Icons Section
+ * 11. Media Queries - Tablet
+ * 12. Media Queries - Mobile
  * ==========================================
  */
 
@@ -36,10 +38,16 @@
     --color-bg-secondary: #252836;
     --color-bg-card: #2d3142;
 
+    /* Card Section Colors (Figma-inspired) */
+    --color-card-header: #e07b67;
+    --color-card-content: #3a9a8c;
+    --color-tool-container: #5c3d4a;
+
     /* Text Colors */
     --color-text-primary: #ffffff;
     --color-text-secondary: #a8adb8;
     --color-text-muted: #6c7283;
+    --color-text-on-accent: #ffffff;
 
     /* Accent Colors */
     --color-accent-primary: #4f8cff;
@@ -65,6 +73,7 @@
     /* Shadow Values */
     --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
     --shadow-image: 0 8px 30px rgba(0, 0, 0, 0.4);
+    --shadow-tool: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* ==========================================
@@ -133,12 +142,24 @@ body {
     box-shadow: var(--shadow-image);
 }
 
-/* Description section that expands to fill remaining space */
+/* Description Container: Styled box with background, padding, and curved edges */
 .profile-header__description {
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 0;
     min-width: 280px;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-bg-card);
+    padding-top: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+    border-top-left-radius: var(--radius-large);
+    border-top-right-radius: var(--radius-large);
+    border-bottom-left-radius: var(--radius-large);
+    border-bottom-right-radius: var(--radius-large);
+    box-shadow: var(--shadow-tool);
 }
 
 /* Description paragraph styling */
@@ -170,7 +191,7 @@ body {
    7. PROJECT CARDS
    ========================================== */
 
-/* Project Card: Individual card with flex column layout */
+/* Project Card: Individual card with flex column layout and overflow hidden for label */
 .project-card {
     display: flex;
     flex-direction: column;
@@ -181,11 +202,21 @@ body {
     max-width: 380px;
     background-color: var(--color-bg-card);
     border-radius: var(--radius-large);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+
+/* Project card content wrapper for padding (excludes label) */
+.project-card__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
     padding-top: var(--spacing-md);
     padding-bottom: var(--spacing-md);
     padding-left: var(--spacing-md);
     padding-right: var(--spacing-md);
-    box-shadow: var(--shadow-card);
 }
 
 /* Project title styling */
@@ -197,17 +228,58 @@ body {
     color: var(--color-text-primary);
 }
 
-/* Project description with flex-grow to push tools to bottom */
-.project-card__description {
-    flex-grow: 1;
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: var(--color-text-secondary);
-    margin-bottom: var(--spacing-md);
+/* ==========================================
+   8. PROJECT CARD LABEL
+   ========================================== */
+
+/* Project Label: Colored header bar indicating this is a project */
+.project-card__label {
+    background-color: var(--color-card-header);
+    color: var(--color-text-on-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding-top: var(--spacing-xs);
+    padding-bottom: var(--spacing-xs);
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+    margin-bottom: 0;
 }
 
 /* ==========================================
-   8. TOOLS/ICONS SECTION
+   9. PROJECT CARD DESCRIPTION (Bullet Points)
+   ========================================== */
+
+/* Description List: Bullet points for clear project information */
+.project-card__description {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    list-style-type: disc;
+    list-style-position: outside;
+    padding-left: var(--spacing-md);
+    margin-top: 0;
+    margin-bottom: var(--spacing-md);
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Individual list item styling */
+.project-card__description-item {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Remove margin from last list item */
+.project-card__description-item:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================
+   10. TOOLS/ICONS SECTION
    ========================================== */
 
 /* Tools Section: Pushed to bottom of card via margin-top: auto */
@@ -219,36 +291,46 @@ body {
     border-top-color: var(--color-border);
 }
 
-/* Tools container with horizontal Flexbox layout */
+/* Tools container: Evenly distributed icon boxes */
 .project-card__tools-container {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    gap: var(--spacing-sm);
+    width: 100%;
+    gap: var(--spacing-xs);
 }
 
-/* Individual tool icon wrapper */
+/* Tool Container: Individual colored box for each technology icon */
 .project-card__tool {
-    width: 36px;
-    height: 36px;
     display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: calc(33.333% - var(--spacing-xs));
     align-items: center;
     justify-content: center;
+    background-color: var(--color-tool-container);
+    border-radius: var(--radius-small);
+    padding-top: var(--spacing-sm);
+    padding-bottom: var(--spacing-sm);
+    padding-left: var(--spacing-xs);
+    padding-right: var(--spacing-xs);
+    min-height: 60px;
+    box-shadow: var(--shadow-tool);
 }
 
 /* Tool Icons: Contained within fixed-size wrapper for consistency */
 .project-card__tool-icon {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
+    width: 36px;
     height: auto;
+    max-width: 100%;
+    max-height: 40px;
     object-fit: contain;
 }
 
 /* ==========================================
-   9. MEDIA QUERIES - TABLET (max-width: 900px)
+   11. MEDIA QUERIES - TABLET (max-width: 900px)
    ========================================== */
 
 @media screen and (max-width: 900px) {
@@ -266,7 +348,7 @@ body {
 }
 
 /* ==========================================
-   10. MEDIA QUERIES - MOBILE (max-width: 600px)
+   12. MEDIA QUERIES - MOBILE (max-width: 600px)
    ========================================== */
 
 @media screen and (max-width: 600px) {
@@ -286,10 +368,14 @@ body {
         width: 160px;
     }
 
-    /* Center the description text on mobile */
+    /* Center the description container on mobile with adjusted padding */
     .profile-header__description {
         min-width: 100%;
         text-align: center;
+        padding-top: var(--spacing-sm);
+        padding-bottom: var(--spacing-sm);
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
     }
 
     /* Single column layout for project cards on mobile */
@@ -306,16 +392,40 @@ body {
         padding-right: var(--spacing-sm);
     }
 
-    /* Adjust card padding for mobile */
-    .project-card {
+    /* Adjust card content padding for mobile */
+    .project-card__content {
         padding-top: var(--spacing-sm);
         padding-bottom: var(--spacing-sm);
         padding-left: var(--spacing-sm);
         padding-right: var(--spacing-sm);
     }
 
+    /* Adjust label padding for mobile */
+    .project-card__label {
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
+    }
+
     /* Center tools on mobile */
     .project-card__tools-container {
-        justify-content: center;
+        justify-content: space-between;
+    }
+
+    /* Smaller icon containers on mobile */
+    .project-card__tool {
+        min-height: 50px;
+        padding-top: var(--spacing-xs);
+        padding-bottom: var(--spacing-xs);
+    }
+
+    /* Smaller icons on mobile */
+    .project-card__tool-icon {
+        width: 28px;
+        max-height: 32px;
+    }
+
+    /* Adjust description list padding on mobile */
+    .project-card__description {
+        padding-left: var(--spacing-sm);
     }
 }
