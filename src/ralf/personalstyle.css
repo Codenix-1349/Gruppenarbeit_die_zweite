@@ -1,186 +1,248 @@
-body {
-  line-height: 0px;
-}
-
 .backlink {
   color: #2a1c10;
   text-decoration: none;
 }
 
-.nametitel {
-  margin: 40px 20px 40px 30px;
-}
-
-main {
+.ralf-main {
   margin: 20px;
-  width: fit-content;
-  display: flex;
 }
 
-.main_puzzle {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+.ralf-main-title {
+  padding: 20px 0px;
 }
 
-.main_items {
-  position: relative;
-
-  display: flex;
+.content {
   flex-direction: column;
-  justify-content: space-between;
-  margin: 20px;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
 }
 
-.main_item {
+.content-puzzle {
+  margin: 0px 0px;
 }
-.main_puzzle_item {
+
+.puzzle-row {
+  display: flex;
+}
+.puzzle-row-button {
+  display: flex;
+  flex-direction: row;
+}
+
+.puzzle-teil {
   position: relative;
+  line-height: 0px;
 }
 
-.main_puzzle_cover {
+.puzzle-teil-cover {
   position: absolute;
-  top: 0px;
-  left: 0px;
   z-index: 20;
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  width: 60px;
 }
 
-.main_puzzle_cover_link {
+.puzzle-teil-link {
   text-decoration: none;
-  height: fit-content;
 }
 
-.main_puzzle_uncovered {
-  position: relative;
-  top: 0px;
-  left: 0px;
-
+.puzzle-teil-ralf {
+  position: absolute top;
+  width: 60px;
   z-index: 1;
 }
 
-.main_puzzle_cover_1_1_link:hover {
-  opacity: 50%;
-  .main_item_1_1.visibility:visited {
-    visibility: visible;
+.puzzle-alle {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  align-items: flex-end;
+}
+
+.puzzle-alle a {
+  text-decoration: none;
+  color: #2a1c10;
+}
+
+a:visited {
+  visibility: hidden;
+}
+
+a:hover {
+  opacity: 25%;
+}
+
+body:has(#puzzle-teil-link_1:hover) #content-vita_item_1 {
+  visibility: visible;
+}
+
+body:has(#puzzle-teil-link_2:hover) #content-vita_item_2 {
+  visibility: visible;
+}
+
+body:has(#puzzle-teil-link_3:hover) #content-vita_item_3 {
+  visibility: visible;
+}
+
+body:has(#puzzle-teil-link_4:hover) #content-vita_item_4 {
+  visibility: visible;
+}
+
+body:has(#puzzle-teil-link_5:hover) #content-vita_item_5 {
+  visibility: visible;
+}
+
+body:has(#puzzle-teil-link_6:hover) #content-vita_item_6 {
+  visibility: visible;
+}
+
+body:has(#puzzle-teil-link_7:hover) #content-vita_item_7 {
+  visibility: visible;
+}
+
+body:has(#puzzle-teil-link_8:hover) #content-vita_item_8 {
+  visibility: visible;
+}
+
+body:has(#puzzle-teil-link_9:hover) #content-vita_item_9 {
+  visibility: visible;
+}
+
+.content-vita {
+  margin: 0px 0px;
+}
+
+.content-vita_item {
+  background-color: burlywood;
+  padding: 5px 20px;
+  margin: 0px 0px;
+}
+
+.content-vita > #content-vita_item_1 {
+  visibility: hidden;
+}
+#content-vita_item_2 {
+  visibility: hidden;
+}
+#content-vita_item_3 {
+  visibility: hidden;
+}
+#content-vita_item_4 {
+  visibility: hidden;
+}
+#content-vita_item_5 {
+  visibility: hidden;
+}
+#content-vita_item_6 {
+  visibility: hidden;
+}
+#content-vita_item_7 {
+  visibility: hidden;
+}
+#content-vita_item_8 {
+  visibility: hidden;
+}
+#content-vita_item_9 {
+  visibility: hidden;
+}
+
+@media (min-width: 1070px) {
+  .puzzle-teil-ralf {
+    width: 200px;
+  }
+  .puzzle-teil-cover {
+    width: 200px;
+  }
+  .content {
+    flex-direction: row;
   }
 }
 
-.main_puzzle_cover_1_2_link:hover {
-  opacity: 25%;
+@media (min-width: 280px) {
+  .puzzle-teil-ralf {
+    width: 80px;
+  }
+  .puzzle-teil-cover {
+    width: 80px;
+  }
+  .content {
+    flex-direction: column;
+  }
 }
 
-.main_puzzle_cover_1_3_link:hover {
-  opacity: 25%;
+@media (min-width: 350px) {
+  .puzzle-teil-ralf {
+    width: 100px;
+  }
+  .puzzle-teil-cover {
+    width: 100px;
+  }
+  .content {
+    flex-direction: column;
+  }
 }
 
-.main_puzzle_cover_2_1_link:hover {
-  opacity: 25%;
+@media (min-width: 490px) {
+  .puzzle-teil-ralf {
+    width: 150px;
+  }
+  .puzzle-teil-cover {
+    width: 150px;
+  }
+  .content {
+    flex-direction: column;
+  }
 }
 
-.main_puzzle_cover_2_2_link:hover {
-  opacity: 25%;
+@media (min-width: 640px) {
+  .puzzle-teil-ralf {
+    width: 200px;
+  }
+  .puzzle-teil-cover {
+    width: 200px;
+  }
+  .content {
+    flex-direction: column;
+  }
 }
 
-.main_puzzle_cover_2_3_link:hover {
-  opacity: 25%;
+@media (min-width: 1000px) {
+  .puzzle-teil-ralf {
+    width: 120px;
+  }
+  .puzzle-teil-cover {
+    width: 120px;
+  }
+  .content {
+    flex-direction: row;
+  }
+  .content-vita_item {
+    padding: 10px 10px;
+    margin: 0px 20px;
+  }
 }
 
-.main_puzzle_cover_3_1_link:hover {
-  opacity: 25%;
+@media (min-width: 1400px) {
+  .puzzle-teil-ralf {
+    width: 150px;
+  }
+  .puzzle-teil-cover {
+    width: 150px;
+  }
+  .content {
+    flex-direction: row;
+  }
 }
 
-.main_puzzle_cover_3_2_link:hover {
-  opacity: 25%;
-}
-
-.main_puzzle_cover_3_3_link:hover {
-  opacity: 25%;
-}
-
-.main_puzzle_cover_1_1_link:visited {
-  visibility: hidden;
-}
-
-.main_puzzle_cover_1_2_link:visited {
-  visibility: hidden;
-}
-
-.main_puzzle_cover_1_3_link:visited {
-  visibility: hidden;
-}
-
-.main_puzzle_cover_2_1_link:visited {
-  visibility: hidden;
-}
-
-.main_puzzle_cover_2_2_link:visited {
-  visibility: hidden;
-}
-
-.main_puzzle_cover_2_3_link:visited {
-  visibility: hidden;
-}
-
-.main_puzzle_cover_3_1_link:visited {
-  visibility: hidden;
-}
-
-.main_puzzle_cover_3_2_link:visited {
-  visibility: hidden;
-}
-
-.main_puzzle_cover_3_3_link:hover {
-  visibility: hidden;
-}
-
-.main_puzzle_item {
-  margin: 0px;
-  padding: 0px;
-  width: 100%;
-  display: block;
-  position: absolute top;
-  z-index: 20;
-}
-.main_puzzle_uncovered {
-  margin: 0px;
-  padding: 0px;
-  width: 100%;
-  display: block;
-  top: 0px;
-  position: absolute top;
-  z-index: -1;
-}
-
-.main_puzzle_link {
-  margin: 0px;
-  padding: 0px;
-  border: 0px;
-}
-
-.main_item_1_1 {
-  visibility: visible;
-}
-.main_item_1_2 {
-  visibility: hidden;
-}
-.main_item_1_3 {
-  visibility: hidden;
-}
-.main_item_2_1 {
-  visibility: hidden;
-}
-.main_item_2_2 {
-  visibility: hidden;
-}
-.main_item_2_3 {
-  visibility: hidden;
-}
-.main_item_3_1 {
-  visibility: hidden;
-}
-.main_item_3_2 {
-  visibility: hidden;
-}
-.main_item_3_3 {
-  visibility: hidden;
+@media (min-width: 1600px) {
+  .puzzle-teil-ralf {
+    width: 200px;
+  }
+  .puzzle-teil-cover {
+    width: 200px;
+  }
+  .content {
+    flex-direction: row;
+  }
 }
